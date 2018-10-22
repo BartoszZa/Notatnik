@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+  NavigationPage.HasNavigationBar="false"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  xmlns:e="clr-namespace:NOTATNIK.Models.Extensions;assembly=NOTATNIK"
+  x:Class="NOTATNIK.Views.InitializationPage">
+
+  <Grid>
+    <Image
+      Source="{e:AssetsImage Loading.jpg}"
+      Aspect="AspectFill"
+      SizeChanged="Image_SizeChanged" />
+  </Grid>
+</ContentPage>

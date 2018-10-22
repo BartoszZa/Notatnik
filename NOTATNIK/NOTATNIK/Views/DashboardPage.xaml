@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage 
+  NavigationPage.HasBackButton="false"
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="NOTATNIK.Views.DashboardPage"
+  BackgroundColor="#efefef">
+
+  <Grid
+   RowSpacing="0"
+   ColumnSpacing="0">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="5" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <Grid
+      BackgroundColor="#073a0a"
+      Padding="0,15"
+      Grid.Row="1">
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding CmdAdd}" />
+      </Grid.GestureRecognizers>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="1*" />
+      </Grid.ColumnDefinitions>
+      <Label
+        Grid.Column="1"
+        TextColor="#efefef"
+        FontSize="16"
+        FontAttributes="Bold"
+        Text="DODAJ">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding CmdAdd}" />
+        </Label.GestureRecognizers>
+      </Label>
+    </Grid>
+
+    <ScrollView
+      IsVisible="{Binding HasItems}"
+      Grid.Row="2">
+      <StackLayout
+        Spacing="0"
+        Margin="0"
+        Orientation="Vertical"
+        x:Name="StlTask" />
+    </ScrollView>
+
+    <Grid
+      Grid.Row="2"
+      Margin="20,20,20,60"
+      VerticalOptions="Center"
+      HorizontalOptions="Center"
+      IsVisible="{Binding NoItems}">
+      <Label
+        Text="Brak notatek."
+        HorizontalTextAlignment="Center"
+        FontAttributes="Bold" />
+    </Grid>
+  </Grid>
+</ContentPage>
