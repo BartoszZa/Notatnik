@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentView
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="NOTATNIK.Views.Controls.TaskControl">
+
+  <Grid
+    Padding="0,0,0,1"
+    BackgroundColor="#073a0a">
+    <Grid
+      Margin="0"
+      RowSpacing="0"
+      ColumnSpacing="0"
+      BackgroundColor="#efefef">
+      <Grid.GestureRecognizers>
+        <TapGestureRecognizer Command="{Binding CmdSelected}" />
+      </Grid.GestureRecognizers>
+      <Grid.RowDefinitions>
+        <RowDefinition Height="20" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="20" />
+      </Grid.RowDefinitions>
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="20" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="20" />
+      </Grid.ColumnDefinitions>
+
+      <Label
+        Grid.Row="1"
+        Grid.Column="1"
+        TextColor="#073a0a"
+        FontAttributes="Bold"
+        FontSize="13"
+        Text="{Binding Subject}">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding CmdSelected}" />
+        </Label.GestureRecognizers>
+      </Label>
+
+      <Label
+        Grid.Row="2"
+        Grid.Column="1"
+        TextColor="#073a0a"
+        FontSize="12"
+        Text="{Binding Content}">
+        <Label.GestureRecognizers>
+          <TapGestureRecognizer Command="{Binding CmdSelected}" />
+        </Label.GestureRecognizers>
+      </Label>
+    </Grid>
+  </Grid>
+</ContentView>
